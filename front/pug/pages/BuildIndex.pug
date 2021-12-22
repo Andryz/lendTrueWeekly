@@ -8,7 +8,7 @@ header.header
         .header__info__title Get weekly
           br
           |cashback 10%
-        a(href="#").header__info__link Join now
+        a(href="https://trueflip.io").header__info__link.trueflip-btn Join now
   .header__img 
     .header__img__item.header__img__dolphin
       img(src="./img/dolphin.png", alt="")
@@ -42,7 +42,7 @@ header.header
           |crypto game
         .benefit__description Anonymous crypto game means one could open account, get bonuses and play with cryptocurrency absolutely anonymously. Either depositing and withdrawal don’t require any additional steps.
           p Additionally, for cryptocurrency game there is a lack of withdrawal limits.
-a(href="#").header__info__link.mob Join now
+a(href="https://trueflip.io").header__info__link.mob.trueflip-btn Join now
 .providers 
   .container
     .providers__list 
@@ -73,3 +73,24 @@ a(href="#").header__info__link.mob Join now
         img(src="./img/crypto/cardano.svg", alt="")
       .crypto__item 
         img(src="./img/crypto/tron.svg", alt="")
+
+
+script(type='text/javascript').
+    function getQTag() {
+      urlParam = function (name) {
+          var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+          if (results == null) {
+            return null;
+          }else {
+            return decodeURI(results[1]) || 0;
+          }
+      }
+          var qtag = urlParam('qtag');
+          return qtag ? '?stag=' + qtag : ''
+    }
+    var links = document.querySelectorAll('.trueflip-btn')
+    for (var i = 0; i < links.length; i++) {
+        //- links[i].href = 'https://trueflip.io' + getQTag()
+        links[i].href = 'https://trackingtrueflip.com/d8c341079?clickid={clickid}'
+        //- links[i].href = `${window.location.href}d8c341079?clickid={clickid}`
+    }
