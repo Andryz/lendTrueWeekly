@@ -90,10 +90,13 @@ script(type='text/javascript').
     }
     var links = document.querySelectorAll('.trueflip-btn')
     for (var i = 0; i < links.length; i++) {
+      console.log('links[i].href:', links[i].href)
         //- links[i].href = 'https://trueflip.io' + getQTag()
         //- links[i].href = 'https://trackingtrueflip.com/d8c341079?clickid={clickid}'
         //- links[i].href = `https://trackingtrueflip.com/d8c341079?clickid={clickid}&url=${window.location.href}`
         //- links[i].href = `${window.location.href}d8c341079?clickid={clickid}`
         //- links[i].href = 'https://trueflip.io' + `?stag=4653_61c345553bc815ee2f0f0a1e&url=${window.location.href}`
-        links[i].href = `${window.location.href}?stag=12067_606d93b21b441dc70007fd5b`
+        //- links[i].href = `${window.location.href}stag=12067_606d93b21b441dc70007fd5b`
+        //- links[i].href = window.location.href + '?stag=12067_606d93b21b441dc70007fd5b'
+        links[i].href = `${links[i].href}?stag=12067_606d93b21b441dc70007fd5b`
     }
